@@ -26,11 +26,10 @@ export class TaskService {
     return task;
   }
 
-  addData(value: any){
+  addData(value: any){    
     const dbInstance = collection(this.firestore, 'tasks');
     addDoc(dbInstance, value)
       .then( () =>{
-        alert('Tarea añadida con éxito')
       })
       .catch((err:{ message : any; })=>{
         alert(err.message)
@@ -54,12 +53,10 @@ export class TaskService {
     const dataToUpdate = doc(this.firestore, 'tasks', id);
     updateDoc(dataToUpdate,{
       title: data.title,
-      date: data.date,
       desc: data.desc,
       done: data.done
     })
       .then(()=>{
-        alert('Tarea actualizada con éxito')
         this.getData()
       })
       .catch((err: {message :any})=>{
@@ -71,7 +68,6 @@ export class TaskService {
     const dataToDelete = doc(this.firestore, 'tasks', id);
     deleteDoc(dataToDelete)
     .then(()=>{
-      alert('Tarea borrada con éxito');
     })
     .catch((err: {message:any})=>{
       alert(err.message);

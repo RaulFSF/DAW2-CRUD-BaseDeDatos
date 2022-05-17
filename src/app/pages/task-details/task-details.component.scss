@@ -1,0 +1,15 @@
+#formContainer{
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.taskForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    margin: 1vw;
+    padding: 0.8vh;
+}

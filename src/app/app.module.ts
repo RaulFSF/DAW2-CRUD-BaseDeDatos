@@ -12,6 +12,8 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { TaskComponent } from './components/task/task.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     TaskListComponent,
     TaskDetailsComponent,
     ToolbarComponent,
+    TaskComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
     provideFirebaseApp(()=> initializeApp(environment.firebase)),
     provideAuth(()=> getAuth()),
     provideFirestore(()=> getFirestore())
