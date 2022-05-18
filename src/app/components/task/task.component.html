@@ -1,15 +1,26 @@
 <div id="tag">
-    <mat-card>
-        <mat-card-title>{{task.title}}</mat-card-title>
-        <mat-card-content>{{task.desc}}</mat-card-content>
-        <div *ngIf="task.done === true; else falseBlock">
+    <div @insertRemove *ngIf="task.done===true; else falseDiv">
+        <mat-card id="trueCard">
+            <mat-card-title>{{task.title}}</mat-card-title>
+            <mat-card-content>{{task.desc}}</mat-card-content>
+            <div class="botones">
+                <button mat-raised-button color="primary" type="submit" (click)="taskDetails()">Details</button>
+                <button mat-raised-button color="primary" type="submit" (click)="changeDone()">Done</button>
+                <button mat-raised-button color="warn" type="submit" (click)="deleteTask()">Delete</button>
+            </div>
             <mat-card-footer>Status: Completed</mat-card-footer>
-        </div>
-        <ng-template #falseBlock><mat-card-footer>Status: Not completed</mat-card-footer></ng-template>
-        <div class="botones">
-            <button mat-raised-button color="primary" type="submit" (click)="taskDetails()">Details</button>
-            <button mat-raised-button color="primary" type="submit" (click)="changeDone()">Done</button>
-            <button mat-raised-button color="warn" type="submit" (click)="deleteTask()">Delete</button>
-        </div>
-    </mat-card>
+        </mat-card>
+    </div>
+    <ng-template #falseDiv>
+        <mat-card @insertRemove id="falseCard" >
+            <mat-card-title>{{task.title}}</mat-card-title>
+            <mat-card-content>{{task.desc}}</mat-card-content>
+            <div class="botones">
+                <button mat-raised-button color="primary" type="submit" (click)="taskDetails()">Details</button>
+                <button mat-raised-button color="primary" type="submit" (click)="changeDone()">Done</button>
+                <button mat-raised-button color="warn" type="submit" (click)="deleteTask()">Delete</button>
+            </div>
+            <mat-card-footer>Status: Not completed</mat-card-footer>
+        </mat-card>
+    </ng-template>
 </div>

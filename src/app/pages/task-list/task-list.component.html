@@ -1,18 +1,20 @@
-<div id="formContainer">
-    <h1>Create Task</h1>
-    <form class="taskForm">
-        <mat-label>Title: </mat-label>
-        <input matInput placeholder="Task tittle" [(ngModel)]="this.taskForm.title" name="title" required>
-        <mat-label>Description: </mat-label>
-        <input matInput placeholder="Task description" [(ngModel)]="this.taskForm.desc" name="desc" required>
-        <button mat-raised-button color="primary" type="submit" (click)="createTask()">Create</button>
-    </form>
-</div>
+<div id="container">
+    <div id="formContainer">
+        <h1>Create Task</h1>
+        <form class="taskForm">
+            <mat-label>Title: </mat-label>
+            <input matInput placeholder="Task tittle" [(ngModel)]="this.taskForm.title" name="title" required>
+            <mat-label>Description: </mat-label>
+            <input matInput placeholder="Task description" [(ngModel)]="this.taskForm.desc" name="desc" required>
+            <button mat-raised-button color="primary" type="submit" (click)="createTask()">Create</button>
+        </form>
+    </div>
 
-<div id="tag">
-    <app-task *ngFor="let task of list" [task]="task" (delete)="getTasks()"></app-task>
-    <div *ngIf="list.length === 0" id="noTasks">
-        <h1>You don´t have tasks yet. Create one.</h1>
+    <div id="tags">
+        <app-task *ngFor="let task of list" [task]="task" (delete)="getTasks()"></app-task>
+        <div *ngIf="list.length === 0" id="noTasks">
+            <h1>You don´t have tasks yet. Create one.</h1>
+        </div>
     </div>
 </div>
 

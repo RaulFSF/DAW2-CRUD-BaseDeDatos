@@ -1,14 +1,16 @@
-<div id="formContainer">
-    <h1>Task Details</h1>
-    <form class="taskForm">
-        <div>
-            <mat-label>Title: </mat-label>
-            <input matInput name="title" value={{task.title}} [(ngModel)]="this.task.title" required>
-        </div>
-        <div>
-            <mat-label>Description: </mat-label>
-            <input matInput name="desc" value={{task.desc}} [(ngModel)]="this.task.desc" required>
-        </div>
-        <button mat-raised-button color="primary" type="submit" (click)="update()">Update</button>
-    </form>
+<div id="container">
+    <div id="formContainer">
+        <h1>Task Details</h1>
+        <form class="taskForm">
+            <div>
+                <mat-label>Title: </mat-label>
+                <input matInput name="title" value={{task.title}} [(ngModel)]="this.task.title" required>
+            </div>
+            <div>
+                <mat-label>Description: </mat-label>
+                <input matInput id="descInput" name="desc" value={{task.desc}} [(ngModel)]="this.task.desc" required>
+            </div>
+            <button mat-raised-button color="primary" type="submit" (click)="update()">Update</button>
+        </form>
+    </div>
 </div>

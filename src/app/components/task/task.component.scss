@@ -2,12 +2,18 @@
     margin: 2vh;
 }
 
-mat-card{
-    background-color: grey;
-}
-
 mat-card-footer{
     margin-left: 1vw;
+    padding: 2vw;
+}
+
+#trueCard{
+    background-color: lightgreen;
+    color: black;
+}
+
+#falseCard{
+    background-color: darkgrey;
 }
 
 .botones{

@@ -1,11 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskService } from 'src/app/service/task.service';
+import { trigger,style,transition,animate } from '@angular/animations';
+
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  styleUrls: ['./task.component.scss'],
+  animations: [
+    trigger('insertRemove', [
+      transition(':enter', [
+        style({ opacity: 0.5 }),
+        animate('700ms', style({ opacity: 1 })),
+      ])
+    ]),
+  ]
 })
 export class TaskComponent implements OnInit {
   @Input() task: any;
@@ -30,8 +40,6 @@ export class TaskComponent implements OnInit {
     } else{
       this.task.done = true;
     }
-    console.log(this.task);
-    
     this.taskService.updateData(this.task.id, this.task);
   }
 
