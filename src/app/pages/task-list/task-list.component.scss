@@ -16,6 +16,13 @@ mat-label{
     font-style: italic;
 }
 
+.taskForm{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 #tags{
     display: flex;
     flex-wrap: wrap;

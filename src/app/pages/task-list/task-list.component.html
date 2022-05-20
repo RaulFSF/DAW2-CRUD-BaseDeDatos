@@ -2,10 +2,14 @@
     <div id="formContainer">
         <h1>Create Task</h1>
         <form class="taskForm">
-            <mat-label>Title: </mat-label>
-            <input matInput placeholder="Task tittle" [(ngModel)]="this.taskForm.title" name="title" required>
-            <mat-label>Description: </mat-label>
-            <input matInput placeholder="Task description" [(ngModel)]="this.taskForm.desc" name="desc" required>
+            <div>
+                <mat-label>Title: </mat-label>
+                <input matInput placeholder="Task tittle" [(ngModel)]="this.taskForm.title" name="title" required>
+            </div>
+            <div>
+                <mat-label>Description: </mat-label>
+                <input matInput placeholder="Task description" [(ngModel)]="this.taskForm.desc" name="desc" required>
+            </div>
             <button mat-raised-button color="primary" type="submit" (click)="createTask()">Create</button>
         </form>
     </div>

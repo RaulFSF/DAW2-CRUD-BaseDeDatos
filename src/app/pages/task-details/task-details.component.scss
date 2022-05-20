@@ -11,6 +11,14 @@ h1{
     font-weight:800;
 }
 
+
+.taskForm{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 mat-label{
     font-size: large;
     font-style: italic;
