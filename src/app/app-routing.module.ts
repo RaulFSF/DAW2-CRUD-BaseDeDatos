@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'task/:id',
-    component: TaskDetailsComponent
+    loadChildren: () => import('./pages/task-details/task-details.module').then(details=>details.TaskDetailModule)
   },
   {
     path: '**',

@@ -19,7 +19,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     TaskListComponent,
-    TaskDetailsComponent,
     ToolbarComponent,
     TaskComponent,
   ],
